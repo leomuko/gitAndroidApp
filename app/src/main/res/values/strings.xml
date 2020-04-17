@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">gittapp</string>
+    <string name="username">username</string>
 </resources>
