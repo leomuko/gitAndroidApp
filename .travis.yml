@@ -26,7 +26,8 @@ android:
 before_install:
   - yes | sdkmanager "platforms;android-27"
   - yes | sdkmanager "platforms;android-28"
-  - pip install --user codecov
+#  - pip install --user codecov
+  - chmod +x gradlew
 
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
@@ -38,7 +39,7 @@ script:
   - ./gradlew dependencyCheckAnalyze build
   - adb shell input keyevent 82
   - ./gradlew connectedCheck -PdisablePreDex --stacktrace
-  - bash <(curl -s https://codecov.io/bash) -f ./app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
+#  - bash <(curl -s https://codecov.io/bash) -f ./app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
 
 
 after_success:
