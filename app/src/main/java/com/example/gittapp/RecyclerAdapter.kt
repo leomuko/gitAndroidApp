@@ -23,16 +23,14 @@ class RecyclerAdapter(private val recyclerList: List<RecyclerItem>): RecyclerVie
     override fun onBindViewHolder(holder: RecyclerAdapter.RecyclerViewHolder, position: Int) {
         val currentItem = recyclerList[position]
         holder.userImage1.setImageResource(currentItem.imageResource1)
-        holder.userImage2.setImageResource(currentItem.imageResource2)
-        holder.userName1.text = currentItem.text1
-        holder.userName2.text = currentItem.text2
+        holder.followers.text = currentItem.text1
+        holder.userName.text = currentItem.text2
     }
 
     class RecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val userImage1: ImageView = itemView.user_image
-        val userImage2: ImageView = itemView.user_image2
-        val userName1: TextView = itemView.user_name
-        val userName2 : TextView = itemView.user_name2
+        val followers: TextView = itemView.follower
+        val userName : TextView = itemView.username
     }
 
 
