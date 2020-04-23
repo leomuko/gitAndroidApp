@@ -2,4 +2,7 @@
     <string name="app_name">gittapp</string>
     <string name="username">username</string>
     <string name="followers">followers</string>
+    <string name="no_of_followers">205</string>
+    <string name="no_of_repos">205</string>
+    <string name="no_following">205</string>
 </resources>
