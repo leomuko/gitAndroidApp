@@ -38,9 +38,9 @@ before_script:
 
 script:
   - chmod +x ./gradlew
-  - ./gradlew dependencyCheckAnalyze build
-  - adb shell input keyevent 82
-  - ./gradlew connectedCheck -PdisablePreDex --stacktrace
+  #- ./gradlew dependencyCheckAnalyze build
+  #- adb shell input keyevent 82
+ # - ./gradlew connectedCheck -PdisablePreDex --stacktrace
  # - bash <(curl -s https://codecov.io/bash) -f ./app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
 
 
