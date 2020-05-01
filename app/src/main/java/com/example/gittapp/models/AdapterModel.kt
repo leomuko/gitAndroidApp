@@ -4,9 +4,9 @@ import com.example.gittapp.R
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.recycler_screen.view.*
 
-data class RecyclerItem (
+data class AdapterModel (
     @SerializedName("avatar_url")
-    val imageResource1: String = "",
-    var text1: String = "100",
+    val userImage: String = "",
+    var followers: String = "100",
     @SerializedName("login")
-    val text2:String)
+    val userName:String)

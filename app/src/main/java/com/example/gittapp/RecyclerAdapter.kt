@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gittapp.models.AdapterModel
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.recycler_screen.view.*
 
-class RecyclerAdapter(private val recyclerList: List<RecyclerItem>, var clickListener: onItemClickListener): RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
+class RecyclerAdapter(private val recyclerList: List<AdapterModel>, var clickListener: onItemClickListener): RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -29,14 +30,15 @@ class RecyclerAdapter(private val recyclerList: List<RecyclerItem>, var clickLis
     }
 
     class RecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val userImage1: ImageView = itemView.user_image
+        val userImage: ImageView = itemView.user_image
         val followers: TextView = itemView.follower
         val userName : TextView = itemView.username
 
-        fun initialize(item : RecyclerItem, action : onItemClickListener){
-            userImage1.setImageResource(item.imageResource1)
-            followers.text = item.text1
-            userName.text = item.text2
+        fun initialize(item : AdapterModel, action : onItemClickListener){
+            //userImage1.setImageResource(item.imageResource1)
+            Picasso.get().load(item.userImage).into(userImage)
+            followers.text = item.followers
+            userName.text = item.userName
 
             itemView.setOnClickListener{
                 action.onItemClick(item,adapterPosition)
@@ -47,5 +49,5 @@ class RecyclerAdapter(private val recyclerList: List<RecyclerItem>, var clickLis
    
 }
 interface onItemClickListener{
-    fun onItemClick(item : RecyclerItem, position: Int)
+    fun onItemClick(item : AdapterModel, position: Int)
 }
