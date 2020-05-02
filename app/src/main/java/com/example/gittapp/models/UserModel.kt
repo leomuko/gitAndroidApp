@@ -8,5 +8,7 @@ data class UserModel(
     @SerializedName("followers")
     var followers: Int,
     @SerializedName("following")
-    var following: Int
+    var following: Int,
+    @SerializedName("public_repos")
+    var repos: Int
 )

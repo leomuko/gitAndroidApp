@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity(), onItemClickListener {
     override fun onItemClick(item: AdapterModel, position: Int) {
 
         val intent = Intent(this, DetailActivity::class.java)
+
+        intent.putExtra("hellp", theList.get(position))
         startActivity(intent)
     }
 
@@ -72,6 +74,8 @@ class MainActivity : AppCompatActivity(), onItemClickListener {
                 for (i in 0 until (theList.size - 1)) {
                     if (theList[i].userName == body.userName) {
                         theList[i].followers = body.followers.toString()
+                        theList[i].following = body.following.toString()
+                        theList[i].repos = body.repos.toString()
                     }
                 }
 
