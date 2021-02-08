@@ -1,4 +1,4 @@
-# First Android With Kotlin Application
+# Android App Built With Kotlin Application
 
 This is an android application that uses the github api to fetch all python developers within Kampala.
 The application then displays the multiple users ie the usernames and their respective profile images.
